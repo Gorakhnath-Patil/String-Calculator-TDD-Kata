@@ -19,5 +19,5 @@ The String Calculator is a simple Java application that adds numbers provided in
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/string-calculator.git
+   git clone https://github.com/Gorakhnath-Patil/String-Calculator-TDD-Kata
    cd string-calculator
