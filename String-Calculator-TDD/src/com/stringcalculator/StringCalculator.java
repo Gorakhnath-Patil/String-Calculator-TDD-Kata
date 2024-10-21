@@ -20,8 +20,25 @@ public class StringCalculator {
 			return 0; // Return 0 for an empty string
 		}
 
-		// Replace newline characters with commas, then split the string by commas
+		// Check for custom delimiter
+		if (numbers.startsWith("//")) {
+			// Find the newline character that follows the custom delimiter
+			int delimiterEndIndex = numbers.indexOf("\n");
+			String customDelimiter = numbers.substring(2, delimiterEndIndex);
+			String numbersToProcess = numbers.substring(delimiterEndIndex + 1);
+
+			// Replace the custom delimiter with a comma, then split the string
+			String[] numArray = numbersToProcess.split(customDelimiter);
+			return calculateSum(numArray);
+		}
+
+		// If no custom delimiter, replace newlines with commas and split
 		String[] numArray = numbers.replace("\n", ",").split(",");
+
+		return calculateSum(numArray);
+	}
+
+	private int calculateSum(String[] numArray) {
 		// Initialize sum to 0
 		int sum = 0;
 
@@ -30,7 +47,6 @@ public class StringCalculator {
 			sum += Integer.parseInt(num);
 		}
 
-		// Return the total sum
 		return sum;
 	}
 }

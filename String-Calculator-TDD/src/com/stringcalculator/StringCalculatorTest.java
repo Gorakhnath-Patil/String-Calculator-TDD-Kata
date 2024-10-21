@@ -73,4 +73,15 @@ public class StringCalculatorTest {
 		// Assert that the result is the sum of 1, 2, and 3
 		assertEquals(6, result);
 	}
+
+	@Test
+	public void testCustomDelimiter() {
+		StringCalculator calculator = new StringCalculator();
+
+		// Test with a custom delimiter ";"
+		int result = calculator.add("//;\n1;2");
+
+		// Assert that the result is the sum of 1 and 2
+		assertEquals(3, result);
+	}
 }
