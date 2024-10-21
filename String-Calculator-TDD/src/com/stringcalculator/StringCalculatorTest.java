@@ -84,4 +84,17 @@ public class StringCalculatorTest {
 		// Assert that the result is the sum of 1 and 2
 		assertEquals(3, result);
 	}
+
+	@Test
+	public void testNegativeNumbers() {
+		StringCalculator calculator = new StringCalculator();
+
+		// Expecting an exception when negative numbers are present
+		Exception exception = org.junit.jupiter.api.Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			calculator.add("-1,2,-3");
+		});
+
+		// Assert that the exception message is correct
+		assertEquals("negative numbers not allowed: -1, -3", exception.getMessage());
+	}
 }
