@@ -37,4 +37,18 @@ public class StringCalculatorTest {
 		// Assert that the result is 1
 		assertEquals(1, result);
 	}
+
+	/**
+	 * Test to verify that two numbers separated by a comma return their sum.
+	 */
+	@Test
+	public void testTwoNumbers() {
+		StringCalculator calculator = new StringCalculator();
+
+		// Test with two numbers "1,5"
+		int result = calculator.add("1,5");
+
+		// Assert that the result is the sum of 1 and 5
+		assertEquals(6, result);
+	}
 }

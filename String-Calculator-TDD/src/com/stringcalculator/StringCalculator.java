@@ -15,12 +15,20 @@ public class StringCalculator {
 	 *         0.
 	 */
 	public int add(String numbers) {
-		// Check if the string is empty
-		if (numbers.isEmpty()) {
-			return 0; // Return 0 for an empty string
-		}
+        // Check if the string is empty
+        if (numbers.isEmpty()) {
+            return 0;  // Return 0 for an empty string
+        }
 
-		// If the string contains one number, parse and return it
-		return Integer.parseInt(numbers); // Convert the string to an integer
-	}
+        // Split the string by commas to handle multiple numbers
+        String[] numArray = numbers.split(",");
+
+        // If the string contains one number, return that number
+        if (numArray.length == 1) {
+            return Integer.parseInt(numArray[0]);
+        }
+
+        // If the string contains two numbers, return their sum
+        return Integer.parseInt(numArray[0]) + Integer.parseInt(numArray[1]);
+    }
 }
