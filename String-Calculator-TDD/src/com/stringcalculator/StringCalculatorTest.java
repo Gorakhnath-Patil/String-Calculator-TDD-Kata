@@ -23,4 +23,18 @@ public class StringCalculatorTest {
 		// Assert that the result is 0 for an empty string
 		assertEquals(0, result);
 	}
+
+	/**
+	 * Test to verify that a single number string returns that number.
+	 */
+	@Test
+	public void testSingleNumber() {
+		StringCalculator calculator = new StringCalculator();
+
+		// Test with a single number "1"
+		int result = calculator.add("1");
+
+		// Assert that the result is 1
+		assertEquals(1, result);
+	}
 }

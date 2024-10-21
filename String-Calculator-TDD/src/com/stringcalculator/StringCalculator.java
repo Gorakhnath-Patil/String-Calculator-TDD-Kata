@@ -15,7 +15,12 @@ public class StringCalculator {
 	 *         0.
 	 */
 	public int add(String numbers) {
-		// Returning 0 for an empty string as the simplest test case
-		return 0;
+		// Check if the string is empty
+		if (numbers.isEmpty()) {
+			return 0; // Return 0 for an empty string
+		}
+
+		// If the string contains one number, parse and return it
+		return Integer.parseInt(numbers); // Convert the string to an integer
 	}
 }
