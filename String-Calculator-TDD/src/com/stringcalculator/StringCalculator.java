@@ -23,12 +23,15 @@ public class StringCalculator {
         // Split the string by commas to handle multiple numbers
         String[] numArray = numbers.split(",");
 
-        // If the string contains one number, return that number
-        if (numArray.length == 1) {
-            return Integer.parseInt(numArray[0]);
+        // Initialize sum to 0
+        int sum = 0;
+
+        // Loop through the array and add each number to the sum
+        for (String num : numArray) {
+            sum += Integer.parseInt(num);
         }
 
-        // If the string contains two numbers, return their sum
-        return Integer.parseInt(numArray[0]) + Integer.parseInt(numArray[1]);
+        // Return the total sum
+        return sum;
     }
 }

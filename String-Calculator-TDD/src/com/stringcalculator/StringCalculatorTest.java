@@ -51,4 +51,15 @@ public class StringCalculatorTest {
 		// Assert that the result is the sum of 1 and 5
 		assertEquals(6, result);
 	}
+
+	@Test
+	public void testMultipleNumbers() {
+		StringCalculator calculator = new StringCalculator();
+
+		// Test with multiple numbers "1,2,3,4"
+		int result = calculator.add("1,2,3,4");
+
+		// Assert that the result is the sum of 1, 2, 3, and 4
+		assertEquals(10, result);
+	}
 }
