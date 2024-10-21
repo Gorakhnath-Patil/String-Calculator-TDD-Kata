@@ -62,4 +62,15 @@ public class StringCalculatorTest {
 		// Assert that the result is the sum of 1, 2, 3, and 4
 		assertEquals(10, result);
 	}
+
+	@Test
+	public void testNewlinesAsDelimiter() {
+		StringCalculator calculator = new StringCalculator();
+
+		// Test with numbers separated by commas and newlines "1\n2,3"
+		int result = calculator.add("1\n2,3");
+
+		// Assert that the result is the sum of 1, 2, and 3
+		assertEquals(6, result);
+	}
 }

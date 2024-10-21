@@ -15,23 +15,22 @@ public class StringCalculator {
 	 *         0.
 	 */
 	public int add(String numbers) {
-        // Check if the string is empty
-        if (numbers.isEmpty()) {
-            return 0;  // Return 0 for an empty string
-        }
+		// Check if the string is empty
+		if (numbers.isEmpty()) {
+			return 0; // Return 0 for an empty string
+		}
 
-        // Split the string by commas to handle multiple numbers
-        String[] numArray = numbers.split(",");
+		// Replace newline characters with commas, then split the string by commas
+		String[] numArray = numbers.replace("\n", ",").split(",");
+		// Initialize sum to 0
+		int sum = 0;
 
-        // Initialize sum to 0
-        int sum = 0;
+		// Loop through the array and add each number to the sum
+		for (String num : numArray) {
+			sum += Integer.parseInt(num);
+		}
 
-        // Loop through the array and add each number to the sum
-        for (String num : numArray) {
-            sum += Integer.parseInt(num);
-        }
-
-        // Return the total sum
-        return sum;
-    }
+		// Return the total sum
+		return sum;
+	}
 }
